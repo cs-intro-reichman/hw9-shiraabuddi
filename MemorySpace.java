@@ -93,7 +93,6 @@ public class MemorySpace {
 			MemoryBlock allocatedBlock = current.block;
 			if (allocatedBlock.baseAddress == address) {
 				allocatedList.remove(current);
-
 				freeList.addLast(allocatedBlock);
 				return;
 			}
