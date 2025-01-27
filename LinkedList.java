@@ -227,7 +227,7 @@ public class LinkedList {
 		int index = indexOf(block);
 		if (index ==-1){
 			throw new IllegalArgumentException(
-					"index must be between 0 and less than size");
+					"index must be between 0 and size");
 		}
 		remove(index);
 	}	
