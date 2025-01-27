@@ -253,7 +253,6 @@ public class LinkedList {
 			str += iterator.current.block + " ";
 			iterator.next();
 		}
-		str += " ";
 		return str;
 
 	}
