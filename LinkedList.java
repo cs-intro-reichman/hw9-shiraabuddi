@@ -252,6 +252,9 @@ public class LinkedList {
 		while (iterator.hasNext()){
 			str += iterator.current.block.toString() + " ";
 			iterator.next();
+			if (iterator.hasNext()){
+				str += " ";
+			}
 		}
 		return str;
 
