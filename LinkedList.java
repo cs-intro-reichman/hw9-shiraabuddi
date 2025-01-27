@@ -97,15 +97,17 @@ public class LinkedList {
 		if (index == 0){
 			newNode.next =first;
 			first = newNode;
+			if (size == 0){
+				last = newNode;
+			}
 		}
 		else if (index == size){
 			last.next = newNode;
 			last = newNode;
 		}
 		else{
-				Node current = getNode(index);
-				getNode(index-1).next=newNode;
-				newNode.next = current;
+			newNode.next = getNode(index);
+			getNode(index-1).next = newNode;
 
 			}
 			size++;
@@ -148,14 +150,7 @@ public class LinkedList {
 			throw new IllegalArgumentException(
 					"index must be between 0 and size");
 		}
-		Node current = first;
-		for (int i = 0; i < size; i++) {
-			if (index == i){
-				return current.block;
-			}
-			current = current.next;
-		}
-		return null;
+		return getNode(index).block;
 	}	
 
 	/**
@@ -249,16 +244,16 @@ public class LinkedList {
 	 */
 	public String toString() {
 		if (size == 0){
-			return "()";
+			return "";
 		}
-		String str = "";
-		Node current = first;
-		while(current !=  null){
-			str += current.block.toString() + " ";
-			current = current.next;
+		String str ="";
+		ListIterator iterator = new ListIterator(first);
+
+		while (iterator.hasNext()){
+			str += iterator.current.block.toString() + " ";
+			iterator.next();
 		}
-		
-		return str.substring(0, str.length()-1);
+		return str;
 
 	}
 
