@@ -250,12 +250,10 @@ public class LinkedList {
 		ListIterator iterator = new ListIterator(first);
 
 		while (iterator.hasNext()){
-			str += iterator.current.block.toString() + " ";
+			str += iterator.current.block + " ";
 			iterator.next();
-			if (iterator.hasNext()){
-				str += " ";
-			}
 		}
+		str += " ";
 		return str;
 
 	}
